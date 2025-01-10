@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-image: url(winn.jpg);
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.game-container {
+  text-align: center;
+  border-radius: 15px;
+  background-color: #333;
+  padding: 40px;
+  box-shadow: 0px 18px 40px rgba(5, 202, 120, 0.5);
+  width: 370px;
+  animation: pulse 2s infinite; /* Adding a pulse effect for more drama */
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #ff4d4d; /* Dangerous red */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.message-box {
+  font-size: 22px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeInUp 0.7s ease-out forwards, messageStay 4s ease-in-out 0.7s; /* Keep message for longer */
+}
+
+.btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.btn:hover {
+  background-color: #d4cc56;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+#truth-btn, #dare-btn {
+  font-size: 22px;
+}
+
+#next-btn {
+  font-size: 22px;
+  background-color: #28a745;
+}
+
+#done-btn {
+  background-color: #17a2b8; /* Light blue for done button */
+}
+
+.hidden {
+  display: none;
+}
+
+.animated {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* General Footer Styling */
+#footer {
+  background-color: #333;
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  
+  bottom: 0;
+  left: 0;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Dynamic Text Styling */
+#footer-name {
+  font-weight: bold;
+  font-size: 1em;
+  color: #f39c12;
+  text-transform: uppercase;
+  /* animation: nameAnimation 3s infinite alternate; */
+}
+
+/* Animations for dynamic styling */
+@keyframes nameAnimation {
+  0% {
+      color: #f39c12;
+      transform: scale(1);
+  }
+  50% {
+      color: #e74c3c;
+      transform: scale(1.2);
+  }
+  100% {
+      color: #2ecc71;
+      transform: scale(1);
+  }
+}
+
+/* Hover Effect for Footer */
+#footer:hover {
+  background-color: #2c3e50;
+  cursor: pointer;
+}
+
+/* Footer Text on Hover */
+#footer:hover #footer-name {
+  animation: none; /* Stop animation on hover */
+  color: #ecf0f1;
+  transform: scale(1.1);
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(-30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes messageStay {
+  0% {
+      opacity: 1;
+  }
+  80% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+      box-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+  }
+  50% {
+      box-shadow: 0 0 50px rgba(255, 77, 77, 0.7);
+  }
+  100% {
+      box-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+  }
+}
